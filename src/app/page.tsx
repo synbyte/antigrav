@@ -8,6 +8,10 @@ import Testimonials from '@/components/Testimonials';
 import BuyersSection from '@/components/BuyersSection';
 import Footer from '@/components/Footer';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import SituationsSection from '@/components/SituationsSection';
+import TrustSection from '@/components/TrustSection';
+import FAQSection from '@/components/FAQSection';
 
 const SectionWrapper = ({ children, id, className }: { children: React.ReactNode; id?: string; className?: string }) => (
   <motion.div
@@ -31,7 +35,13 @@ export default function Home() {
         <HowItWorks />
       </SectionWrapper>
       <SectionWrapper>
+        <SituationsSection />
+      </SectionWrapper>
+      <SectionWrapper>
         <FeaturesSection />
+      </SectionWrapper>
+      <SectionWrapper>
+        <TrustSection />
       </SectionWrapper>
       <SectionWrapper id="about" className="section-padding bg-slate-50">
         <div className="container-width">
@@ -48,16 +58,22 @@ export default function Home() {
               </p>
             </div>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-xl">
-              {/* Placeholder for About Us Image - using a colored block for now since we don't have assets */}
-              <div className="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center text-white text-opacity-20 text-6xl font-bold">
-                About Us
-              </div>
+              <Image
+                src="/couple-50-60.png"
+                alt="Happy older couple standing in front of their home"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent"></div>
             </div>
           </div>
         </div>
       </SectionWrapper>
       <SectionWrapper>
         <Testimonials />
+      </SectionWrapper>
+      <SectionWrapper>
+        <FAQSection />
       </SectionWrapper>
       <SectionWrapper>
         <BuyersSection />

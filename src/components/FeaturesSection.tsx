@@ -32,6 +32,8 @@ export default function FeaturesSection() {
                             { feature: 'Number of Showings', us: '1 (Just Us)', agent: 'Multiple Open Houses' },
                             { feature: 'Closing Date', us: 'You Choose', agent: '30-60 days after offer' },
                             { feature: 'Repairs Needed', us: 'None (We Buy As-Is)', agent: 'Yes, usually required' },
+                            { feature: 'Cleaning Required', us: 'None', agent: 'Yes, deep cleaning' },
+                            { feature: 'Competitive Offers', us: 'We\'ll Beat Other Offers', agent: 'Depends on market' },
                         ].map((row, index) => (
                             <div key={index} className="grid grid-cols-3 p-4 md:p-6 hover:bg-slate-50 transition-colors">
                                 <div className="col-span-1 font-medium text-slate-900 flex items-center">

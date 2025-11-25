@@ -30,6 +30,12 @@ export default function Navbar() {
                         <Link href="#reviews" className="text-slate-600 hover:text-brand font-medium transition-colors">
                             Reviews
                         </Link>
+                        <Link href="#faq" className="text-slate-600 hover:text-brand font-medium transition-colors">
+                            FAQ
+                        </Link>
+                        <Link href="#buyers" className="text-slate-600 hover:text-brand font-medium transition-colors">
+                            For Investors
+                        </Link>
                         <a href="tel:+15551234567" className="flex items-center text-slate-900 font-semibold hover:text-brand transition-colors">
                             <Phone className="w-4 h-4 mr-2" />
                             (555) 123-4567
@@ -81,6 +87,20 @@ export default function Navbar() {
                                 onClick={() => setIsOpen(false)}
                             >
                                 Reviews
+                            </Link>
+                            <Link
+                                href="#faq"
+                                className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-md"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                FAQ
+                            </Link>
+                            <Link
+                                href="#buyers"
+                                className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-md"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                For Investors
                             </Link>
                             <a
                                 href="tel:+15551234567"
