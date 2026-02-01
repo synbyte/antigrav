@@ -29,23 +29,23 @@ const reviews = [
 
 export default function Testimonials() {
     return (
-        <section id="reviews" className="section-padding bg-white">
+        <section id="reviews" className="section-padding bg-gradient-to-br from-brand to-brand-dark text-white">
             <div className="container-width">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight">
                         What Our Clients Say
                     </h2>
-                    <p className="text-lg text-slate-600">
+                    <p className="text-xl text-blue-100 font-medium">
                         We've helped hundreds of homeowners sell their houses fast. Here's what they have to say.
                     </p>
                 </div>
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {reviews.map((review, index) => (
-                        <div key={index} className="bg-slate-50 p-8 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 group">
                             <div className="flex items-center mb-6">
                                 {review.image ? (
-                                    <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+                                    <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 border-2 border-white/20 group-hover:border-accent transition-colors">
                                         <Image
                                             src={review.image}
                                             alt={review.name}
@@ -54,21 +54,21 @@ export default function Testimonials() {
                                         />
                                     </div>
                                 ) : (
-                                    <div className="w-16 h-16 rounded-full bg-brand flex items-center justify-center text-white font-bold text-xl mr-4 flex-shrink-0">
+                                    <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center text-white font-black text-xl mr-4 flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform">
                                         {review.initials}
                                     </div>
                                 )}
                                 <div>
-                                    <h4 className="font-bold text-slate-900">{review.name}</h4>
-                                    <p className="text-sm text-slate-500">{review.location}</p>
+                                    <h4 className="font-extrabold text-white text-lg">{review.name}</h4>
+                                    <p className="text-sm text-blue-200 font-medium">{review.location}</p>
                                 </div>
                             </div>
                             <div className="flex mb-4">
                                 {[...Array(review.rating)].map((_, i) => (
-                                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                                    <Star key={i} className="w-5 h-5 text-accent fill-current mr-1" />
                                 ))}
                             </div>
-                            <p className="text-slate-700 italic">"{review.text}"</p>
+                            <p className="text-white/90 italic leading-relaxed text-lg">"{review.text}"</p>
                         </div>
                     ))}
                 </div>

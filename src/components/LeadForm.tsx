@@ -73,122 +73,145 @@ export default function LeadForm() {
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-100">
-            <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-slate-900 mb-2">
-                    Get Your Cash Offer!
-                </h3>
-                <p className="text-slate-600">
-                    No fees. No repairs. No obligation.
-                </p>
+        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-2 border-brand relative group overflow-hidden">
+            {/* Colorful Header */}
+            <div className="bg-gradient-to-r from-brand to-brand-dark px-8 py-6 text-white relative">
+                <div className="absolute top-0 right-0 p-4 opacity-10">
+                    <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <div className="relative z-10">
+                    <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-2 shadow-lg">
+                        Fast & Free
+                    </div>
+                    <h3 className="text-2xl font-extrabold mb-1">
+                        Get Your Cash Offer!
+                    </h3>
+                    <p className="text-white/80 text-sm font-medium">
+                        No fees. No repairs. No obligation.
+                    </p>
+                </div>
+                {/* Decorative Dip */}
+                <div
+                    className="absolute bottom-[-1px] left-[-1px] right-[-1px] h-5 bg-white"
+                    style={{ clipPath: 'polygon(0 100%, 100% 100%, 100% 0.5px, 50% 100%, 0 0.5px)' }}
+                ></div>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
-                        Full Name
-                    </label>
-                    <input
-                        type="text"
-                        id="name"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand focus:border-brand transition-all"
-                        placeholder="John Doe"
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    />
-                </div>
+            <div className="p-8 pt-10">
+                <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="space-y-4">
+                        <div className="relative">
+                            <label htmlFor="name" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                                Full Name
+                            </label>
+                            <input
+                                type="text"
+                                id="name"
+                                required
+                                className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-100 focus:border-brand focus:ring-4 focus:ring-brand/5 transition-all outline-none text-slate-900 font-medium placeholder:text-slate-400"
+                                placeholder="John Doe"
+                                value={formData.name}
+                                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            />
+                        </div>
 
-                <div>
-                    <label htmlFor="address" className="block text-sm font-medium text-slate-700 mb-1">
-                        Property Address
-                    </label>
-                    <input
-                        type="text"
-                        id="address"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand focus:border-brand transition-all"
-                        placeholder="123 Main St, City, State"
-                        value={formData.address}
-                        onChange={(e) => setFormData({ ...formData, address: e.target.value })}
-                    />
-                </div>
+                        <div className="relative">
+                            <label htmlFor="address" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                                Property Address
+                            </label>
+                            <input
+                                type="text"
+                                id="address"
+                                required
+                                className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-100 focus:border-brand focus:ring-4 focus:ring-brand/5 transition-all outline-none text-slate-900 font-medium placeholder:text-slate-400"
+                                placeholder="123 Main St, City, State"
+                                value={formData.address}
+                                onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                            />
+                        </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
-                            Email Address
-                        </label>
-                        <input
-                            type="email"
-                            id="email"
-                            required
-                            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand focus:border-brand transition-all"
-                            placeholder="you@example.com"
-                            value={formData.email}
-                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        />
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label htmlFor="email" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                                    Email Address
+                                </label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    required
+                                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-100 focus:border-brand focus:ring-4 focus:ring-brand/5 transition-all outline-none text-slate-900 font-medium placeholder:text-slate-400"
+                                    placeholder="you@email.com"
+                                    value={formData.email}
+                                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                                />
+                            </div>
+
+                            <div>
+                                <label htmlFor="phone" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                                    Phone Number
+                                </label>
+                                <input
+                                    type="tel"
+                                    id="phone"
+                                    required
+                                    className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-100 focus:border-brand focus:ring-4 focus:ring-brand/5 transition-all outline-none text-slate-900 font-medium placeholder:text-slate-400"
+                                    placeholder="(555) 123-4567"
+                                    value={formData.phone}
+                                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label htmlFor="message" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                                Message (Optional)
+                            </label>
+                            <textarea
+                                id="message"
+                                rows={2}
+                                className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-100 focus:border-brand focus:ring-4 focus:ring-brand/5 transition-all outline-none text-slate-900 font-medium placeholder:text-slate-400 resize-none"
+                                placeholder="Any details..."
+                                value={formData.message}
+                                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                            />
+                        </div>
                     </div>
 
-                    <div>
-                        <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">
-                            Phone Number
-                        </label>
-                        <input
-                            type="tel"
-                            id="phone"
-                            required
-                            className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand focus:border-brand transition-all"
-                            placeholder="(555) 123-4567"
-                            value={formData.phone}
-                            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        />
-                    </div>
-                </div>
-
-                <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
-                        Message (Optional)
-                    </label>
-                    <textarea
-                        id="message"
-                        rows={3}
-                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand focus:border-brand transition-all resize-none"
-                        placeholder="Any details about the property..."
-                        value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    />
-                </div>
-
-                {status === 'error' && (
-                    <div className="text-red-500 text-sm text-center bg-red-50 p-2 rounded-lg border border-red-100">
-                        {errorMessage}
-                    </div>
-                )}
-
-                <button
-                    type="submit"
-                    disabled={status === 'loading'}
-                    className="w-full bg-brand text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
-                >
-                    {status === 'loading' ? (
-                        <>
-                            <Loader2 className="w-5 h-5 mr-2 animate-spin" />
-                            Submitting...
-                        </>
-                    ) : (
-                        <>
-                            Get My Fair Cash Offer
-                            <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                        </>
+                    {status === 'error' && (
+                        <div className="text-red-500 text-sm font-bold text-center bg-red-50 p-3 rounded-xl border-2 border-red-100">
+                            {errorMessage}
+                        </div>
                     )}
-                </button>
 
-                <div className="flex items-center justify-center text-slate-500 text-sm mt-4">
-                    <Lock className="w-4 h-4 mr-1.5" />
-                    <span>Your information is 100% secure</span>
-                </div>
-            </form>
+                    <button
+                        type="submit"
+                        disabled={status === 'loading'}
+                        className="w-full bg-accent text-white py-5 rounded-2xl font-black text-xl hover:bg-accent-dark transition-all shadow-[0_10px_20px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_30px_rgba(245,158,11,0.4)] transform hover:-translate-y-1 active:translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                    >
+                        {status === 'loading' ? (
+                            <>
+                                <Loader2 className="w-6 h-6 mr-3 animate-spin" />
+                                Processing...
+                            </>
+                        ) : (
+                            <>
+                                Get My Cash Offer
+                                <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
+                            </>
+                        )}
+                    </button>
+
+                    <div className="flex items-center justify-center text-slate-400 text-xs font-bold uppercase tracking-widest mt-6">
+                        <Lock className="w-4 h-4 mr-2 text-green-500" />
+                        <span>100% Private & Secure</span>
+                    </div>
+                </form>
+            </div>
+
+            {/* Glowing Accent Border (subtle) */}
+            <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/10 rounded-2xl pointer-events-none transition-colors duration-500"></div>
         </div>
     );
 }
