@@ -60,7 +60,7 @@ export default function SituationsSection() {
                             className="group"
                         >
                             <div className="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                                <div className="w-14 h-14 rounded-xl bg-brand flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg group-hover:from-accent group-hover:to-accent-dark transition-all duration-300">
                                     <situation.icon className="w-7 h-7 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold text-slate-900 mb-3">
@@ -79,8 +79,8 @@ export default function SituationsSection() {
                         No matter your situation, we're here to provide a solution that works for you.
                     </p>
                     <a
-                        href="#"
-                        className="inline-block bg-brand text-white px-8 py-4 rounded-lg font-bold text-lg hover:bg-brand-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
+                        href="#contact"
+                        className="inline-block bg-accent text-white px-10 py-4 rounded-full font-extrabold text-lg hover:bg-accent-dark transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
                     >
                         Get Your Cash Offer Now
                     </a>

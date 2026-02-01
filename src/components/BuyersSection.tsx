@@ -48,8 +48,10 @@ export default function BuyersSection() {
     };
 
     return (
-        <section id="buyers" className="section-padding bg-slate-900 text-white">
-            <div className="container-width">
+        <section id="buyers" className="section-padding bg-slate-900 text-white relative overflow-hidden">
+            <div className="absolute top-[-10%] left-[-5%] h-[400px] w-[400px] rounded-full bg-brand opacity-10 blur-[120px]"></div>
+            <div className="absolute bottom-[-10%] right-[-5%] h-[400px] w-[400px] rounded-full bg-accent opacity-10 blur-[120px]"></div>
+            <div className="container-width relative z-10">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div>
                         <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand/20 border border-brand/30 text-brand-light font-medium text-sm mb-6">
@@ -156,7 +158,7 @@ export default function BuyersSection() {
                                     <button
                                         type="submit"
                                         disabled={status === 'loading'}
-                                        className="w-full bg-brand text-white py-4 rounded-lg font-bold text-lg hover:bg-brand-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                                        className="w-full bg-accent text-white py-4 rounded-lg font-bold text-lg hover:bg-accent-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                                     >
                                         {status === 'loading' ? (
                                             <>

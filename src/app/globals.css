@@ -4,6 +4,9 @@
   --color-brand: #264d8c;
   --color-brand-light: #4a75b8;
   --color-brand-dark: #1c3a6b;
+  --color-accent: #f59e0b;
+  --color-accent-light: #fbbf24;
+  --color-accent-dark: #d97706;
 }
 
 :root {
@@ -13,6 +16,41 @@
   /* Slate 50 */
   --background-end-rgb: 255, 255, 255;
   /* White */
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse-slow {
+
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% auto;
+  animation: gradient 6s linear infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 @layer base {
@@ -44,5 +82,11 @@
 
   .container-width {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .bg-vibrant {
+    background: radial-gradient(circle at top left, var(--color-brand-light) 0%, transparent 40%),
+      radial-gradient(circle at bottom right, var(--color-accent-light) 0%, transparent 40%),
+      linear-gradient(to bottom right, #f8fafc, #ffffff);
   }
 }
