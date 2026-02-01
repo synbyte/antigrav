@@ -38,13 +38,13 @@ const situations = [
 
 export default function SituationsSection() {
     return (
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-gradient-to-br from-brand to-brand-dark text-white">
             <div className="container-width">
                 <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4">
                         We Buy Houses in All Situations
                     </h2>
-                    <p className="text-lg text-slate-600">
+                    <p className="text-lg text-blue-100">
                         Life happens, and sometimes you need to sell your house quickly. Whatever your situation, we're here to help with a fair cash offer and a stress-free process.
                     </p>
                 </div>
@@ -59,14 +59,14 @@ export default function SituationsSection() {
                             transition={{ delay: index * 0.1, duration: 0.5 }}
                             className="group"
                         >
-                            <div className="bg-white border border-slate-200 rounded-2xl p-6 hover:shadow-xl transition-all duration-300 h-full flex flex-col">
-                                <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-brand to-brand-dark flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg group-hover:from-accent group-hover:to-accent-dark transition-all duration-300">
+                            <div className="bg-white/10 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:shadow-2xl transition-all duration-300 h-full flex flex-col">
+                                <div className="w-14 h-14 rounded-xl bg-white/20 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:shadow-lg group-hover:bg-accent transition-all duration-300">
                                     <situation.icon className="w-7 h-7 text-white" />
                                 </div>
-                                <h3 className="text-xl font-bold text-slate-900 mb-3">
+                                <h3 className="text-xl font-bold text-white mb-3">
                                     {situation.title}
                                 </h3>
-                                <p className="text-slate-600 leading-relaxed">
+                                <p className="text-blue-100 leading-relaxed">
                                     {situation.description}
                                 </p>
                             </div>
@@ -75,7 +75,7 @@ export default function SituationsSection() {
                 </div>
 
                 <div className="mt-12 text-center">
-                    <p className="text-lg text-slate-700 mb-6">
+                    <p className="text-lg text-blue-100 mb-6">
                         No matter your situation, we're here to provide a solution that works for you.
                     </p>
                     <a

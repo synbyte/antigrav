@@ -45,8 +45,8 @@ export default function HowItWorks() {
                             transition={{ delay: index * 0.2, duration: 0.6 }}
                             className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 group flex flex-col h-full"
                         >
-                            {/* Illustration Container */}
-                            <div className="relative h-64 bg-white flex items-center justify-center p-8 overflow-hidden">
+                            {/* Illustration Container - Stays White */}
+                            <div className="relative h-64 bg-white flex items-center justify-center p-8">
                                 <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-500 ease-out">
                                     <Image
@@ -58,12 +58,17 @@ export default function HowItWorks() {
                                 </div>
                             </div>
 
-                            {/* Text Content */}
-                            <div className="p-8 flex flex-col flex-grow text-center">
-                                <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-brand transition-colors duration-300">
+                            {/* Text Content - Colored with a "Dip" (Concave Curve) */}
+                            <div
+                                className="p-8 pt-20 flex flex-col flex-grow text-center relative -mt-16 bg-gradient-to-t from-accent-dark to-accent border-4 rounded-b-3xl border-accent"
+                                style={{
+                                    clipPath: 'polygon(0% 12%, 5% 9.5%, 10% 7.5%, 15% 5.8%, 20% 4.4%, 25% 3.3%, 30% 2.4%, 35% 1.7%, 40% 1.2%, 45% 0.9%, 50% 0.8%, 55% 0.9%, 60% 1.2%, 65% 1.7%, 70% 2.4%, 75% 3.3%, 80% 4.4%, 85% 5.8%, 90% 7.5%, 95% 9.5%, 100% 12%, 100% 100%, 0% 100%)'
+                                }}
+                            >
+                                <h3 className="text-2xl font-bold text-white mb-4">
                                     {step.title}
                                 </h3>
-                                <p className="text-slate-600 leading-relaxed font-medium">
+                                <p className="text-white/90 leading-relaxed font-medium">
                                     {step.description}
                                 </p>
                             </div>
