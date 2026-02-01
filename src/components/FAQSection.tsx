@@ -39,18 +39,22 @@ export default function FAQSection() {
     };
 
     return (
-        <section id="faq" className="section-padding bg-slate-50">
-            <div className="container-width">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">
-                        Frequently Asked Questions
+        <section id="faq" className="section-padding bg-slate-50/50 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-20"></div>
+            <div className="container-width relative z-10">
+                <div className="text-center max-w-3xl mx-auto mb-20">
+                    <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand/5 border border-brand/10 text-brand font-bold text-sm mb-6">
+                        Got Questions?
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                        Frequently Asked <span className="text-brand">Questions</span>
                     </h2>
-                    <p className="text-lg text-slate-600">
-                        We know selling your house is a big decision. Here are answers to common questions we hear from homeowners.
+                    <p className="text-xl text-slate-600 leading-relaxed font-medium">
+                        Everything you need to know about selling your house for cash. Transparent answers, no industry jargon.
                     </p>
                 </div>
 
-                <div className="max-w-4xl mx-auto space-y-4">
+                <div className="max-w-4xl mx-auto space-y-6">
                     {faqs.map((faq, index) => (
                         <motion.div
                             key={index}
@@ -58,19 +62,30 @@ export default function FAQSection() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
-                            className="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-md transition-shadow"
+                            className={`bg-white rounded-2xl border-2 transition-all duration-300 ${openIndex === index
+                                    ? 'border-brand shadow-[0_10px_30px_rgba(30,58,138,0.1)] ring-4 ring-brand/5'
+                                    : 'border-slate-100 shadow-sm hover:border-slate-200 hover:shadow-md'
+                                } overflow-hidden`}
                         >
                             <button
                                 onClick={() => toggleFAQ(index)}
-                                className="w-full px-6 py-5 flex items-center justify-between text-left hover:bg-slate-50 transition-colors"
+                                className={`w-full px-8 py-6 flex items-center justify-between text-left transition-colors ${openIndex === index ? 'bg-brand/[0.02]' : 'hover:bg-slate-50'
+                                    }`}
                             >
-                                <span className="text-lg font-semibold text-slate-900 pr-4">
-                                    {faq.question}
-                                </span>
-                                <ChevronDown
-                                    className={`w-5 h-5 text-brand flex-shrink-0 transition-transform duration-300 ${openIndex === index ? 'rotate-180' : ''
-                                        }`}
-                                />
+                                <div className="flex items-center space-x-4">
+                                    <div className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-black transition-colors ${openIndex === index ? 'bg-brand text-white' : 'bg-slate-100 text-slate-400'
+                                        }`}>
+                                        Q
+                                    </div>
+                                    <span className={`text-xl font-bold pr-4 transition-colors ${openIndex === index ? 'text-brand' : 'text-slate-800'
+                                        }`}>
+                                        {faq.question}
+                                    </span>
+                                </div>
+                                <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${openIndex === index ? 'bg-brand text-white rotate-180' : 'bg-slate-100 text-slate-400'
+                                    }`}>
+                                    <ChevronDown className="w-5 h-5" />
+                                </div>
                             </button>
                             <AnimatePresence>
                                 {openIndex === index && (
@@ -81,7 +96,7 @@ export default function FAQSection() {
                                         transition={{ duration: 0.3 }}
                                         className="overflow-hidden"
                                     >
-                                        <div className="px-6 pb-5 text-slate-600 leading-relaxed">
+                                        <div className="px-8 pb-8 pt-2 pl-20 text-slate-600 leading-relaxed text-lg font-medium border-l-4 border-brand mx-6 mb-6 bg-slate-50/50 rounded-r-xl">
                                             {faq.answer}
                                         </div>
                                     </motion.div>
@@ -91,16 +106,19 @@ export default function FAQSection() {
                     ))}
                 </div>
 
-                <div className="mt-12 text-center">
-                    <p className="text-lg text-slate-700 mb-4">
-                        Still have questions? We're here to help.
-                    </p>
-                    <a
-                        href="#contact"
-                        className="inline-block text-brand font-semibold hover:underline"
-                    >
-                        Contact us for more information →
-                    </a>
+                <div className="mt-16 text-center">
+                    <div className="bg-white inline-block p-8 rounded-3xl shadow-xl border border-slate-100">
+                        <p className="text-xl text-slate-900 font-bold mb-6">
+                            Still have more questions?
+                        </p>
+                        <a
+                            href="#contact"
+                            className="inline-flex items-center justify-center bg-brand text-white px-8 py-4 rounded-xl font-bold text-lg hover:bg-brand-dark transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                        >
+                            Contact Us Now
+                            <ChevronDown className="ml-2 w-5 h-5 -rotate-90" />
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
