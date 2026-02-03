@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #264d8c;
-  --color-brand-light: #4a75b8;
-  --color-brand-dark: #1c3a6b;
-  --color-accent: #f59e0b;
-  --color-accent-light: #fbbf24;
-  --color-accent-dark: #d97706;
+  --color-brand: #4a6fa5;
+  --color-brand-light: #6c91c3;
+  --color-brand-dark: #344f7a;
+  --color-accent: #d4b059;
+  --color-accent-light: #e5c37b;
+  --color-accent-dark: #a68a46;
 }
 
 :root {

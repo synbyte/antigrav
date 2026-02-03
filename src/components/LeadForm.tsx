@@ -188,7 +188,7 @@ export default function LeadForm() {
                     <button
                         type="submit"
                         disabled={status === 'loading'}
-                        className="w-full bg-accent text-white py-5 rounded-2xl font-black text-xl hover:bg-accent-dark transition-all shadow-[0_10px_20px_rgba(245,158,11,0.3)] hover:shadow-[0_15px_30px_rgba(245,158,11,0.4)] transform hover:-translate-y-1 active:translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                        className="w-full bg-accent text-white py-5 rounded-2xl font-black text-xl hover:bg-accent-dark transition-all shadow-[0_10px_20px_rgba(212,176,89,0.3)] hover:shadow-[0_15px_30px_rgba(212,176,89,0.4)] transform hover:-translate-y-1 active:translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                     >
                         {status === 'loading' ? (
                             <>

@@ -83,7 +83,7 @@ export default function HeroSection() {
                         >
                             <a
                                 href="tel:+15551234567"
-                                className="inline-flex items-center justify-center bg-accent text-white px-8 py-5 rounded-full font-extrabold text-xl hover:bg-accent-dark transition-all shadow-[0_0_30px_rgba(245,158,11,0.3)] hover:shadow-[0_0_40px_rgba(245,158,11,0.5)] transform hover:-translate-y-1 w-full sm:w-auto group"
+                                className="inline-flex items-center justify-center bg-accent text-white px-8 py-5 rounded-full font-extrabold text-xl hover:bg-accent-dark transition-all shadow-[0_0_30px_rgba(212,176,89,0.3)] hover:shadow-[0_0_40px_rgba(212,176,89,0.5)] transform hover:-translate-y-1 w-full sm:w-auto group"
                             >
                                 <div className="bg-white/20 p-2 rounded-full mr-3 group-hover:scale-110 transition-transform">
                                     <Phone className="w-6 h-6 fill-current" />
