@@ -13,14 +13,14 @@ export default function FeaturesSection() {
                         Why Sell To Us?
                     </h2>
                     <p className="text-lg text-slate-600">
-                        See how selling to SwiftHomeBuyers compares to listing with a traditional real estate agent.
+                        See how selling to True Home Capital compares to listing with a traditional real estate agent.
                     </p>
                 </div>
 
                 <div className="bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
                     <div className="grid grid-cols-3 bg-gradient-to-r from-slate-900 to-slate-800 text-white p-4 md:p-6 text-sm md:text-lg font-bold">
                         <div className="col-span-1">Feature</div>
-                        <div className="col-span-1 text-center text-accent">SwiftHomeBuyers</div>
+                        <div className="col-span-1 text-center text-accent">True Home Capital</div>
                         <div className="col-span-1 text-center text-slate-400 font-medium">Traditional Agent</div>
                     </div>
 

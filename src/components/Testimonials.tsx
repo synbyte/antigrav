@@ -8,7 +8,7 @@ const reviews = [
         name: 'Sarah Johnson',
         location: 'Dallas, TX',
         rating: 5,
-        text: "I needed to sell my inherited property quickly and didn't want to deal with repairs. SwiftHomeBuyers gave me a fair cash offer and we closed in 10 days. Highly recommend!",
+        text: "I needed to sell my inherited property quickly and didn't want to deal with repairs. True Home Capital gave me a fair cash offer and we closed in 10 days. Highly recommend!",
         image: '/testimonial-sarah.png',
     },
     {

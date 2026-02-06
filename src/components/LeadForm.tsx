@@ -76,11 +76,11 @@ export default function LeadForm() {
         <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-2 border-brand relative group overflow-hidden">
             {/* Colorful Header */}
             <div className="bg-gradient-to-r from-brand to-brand-dark px-8 py-6 text-white relative">
-                <div className="absolute top-0 right-0 p-4 opacity-10">
-                    <svg className="w-20 h-20" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-                    </svg>
-                </div>
+                {/* <div className="absolute top-0 right-0 p-4 opacity-50">
+
+                    <img src="/logo_nobg.png" alt="Logo" className="w-25 h-25 object-contain" />
+
+                </div> */}
                 <div className="relative z-10">
                     <div className="inline-block bg-accent px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider mb-2 shadow-lg">
                         Fast & Free

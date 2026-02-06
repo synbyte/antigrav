@@ -10,7 +10,7 @@ export default function Footer() {
                 <div className="grid md:grid-cols-4 gap-12 mb-12">
                     <div className="col-span-1 md:col-span-1">
                         <Link href="/" className="text-2xl font-bold text-white tracking-tight mb-6 block">
-                            Swift<span className="text-brand-light">Home</span>Buyers
+                            True Home <span className="text-brand-light">Capital</span>
                         </Link>
                         <p className="text-slate-400 mb-6">
                             We provide win-win solutions to help homeowners get out of their sticky situations… like Foreclosure, owning a burdensome property, probate, or anything else.
@@ -63,14 +63,14 @@ export default function Footer() {
                             </li>
                             <li className="flex items-center">
                                 <Mail className="w-5 h-5 mr-3 text-brand-light flex-shrink-0" />
-                                <a href="mailto:info@swifthomebuyers.com" className="hover:text-brand-light transition-colors">info@swifthomebuyers.com</a>
+                                <a href="mailto:info@truehomecapital.com" className="hover:text-brand-light transition-colors">info@truehomecapital.com</a>
                             </li>
                         </ul>
                     </div>
                 </div>
 
                 <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
-                    <p>&copy; {new Date().getFullYear()} SwiftHomeBuyers. All rights reserved.</p>
+                    <p>&copy; {new Date().getFullYear()} True Home Capital. All rights reserved.</p>
                 </div>
             </div>
         </footer>

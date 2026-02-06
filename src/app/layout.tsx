@@ -13,14 +13,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sell Your House Fast | SwiftHomeBuyers",
+  title: "Sell Your House Fast | True Home Capital",
   description: "We buy houses in Dallas, TX. Get a fair cash offer for your home in any condition. No fees, no repairs, close in 7 days.",
-  keywords: ["sell house fast", "cash home buyers", "dallas real estate", "sell my house for cash", "we buy houses dallas"],
+  keywords: ["sell house fast", "cash home buyers", "dallas real estate", "sell my house for cash", "we buy houses dallas", "True Home Capital"],
   openGraph: {
-    title: "Sell Your House Fast | SwiftHomeBuyers",
+    title: "Sell Your House Fast | True Home Capital",
     description: "Get a fair cash offer for your home in any condition. No fees, no repairs, close in 7 days.",
-    url: "https://swifthomebuyers.com",
-    siteName: "SwiftHomeBuyers",
+    url: "https://truehomecapital.com",
+    siteName: "True Home Capital",
     locale: "en_US",
     type: "website",
   },

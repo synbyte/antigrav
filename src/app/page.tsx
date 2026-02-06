@@ -48,7 +48,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                About SwiftHomeBuyers
+                About True Home Capital
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
                 We are a local real estate solutions company based in Dallas, TX. We're a family-owned business and focus on helping homeowners like you find solutions for your problem whether you're going through a foreclosure, can't sell your property, or just need to sell their house for all kinds of reasons.

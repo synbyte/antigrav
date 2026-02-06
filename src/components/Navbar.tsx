@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Menu, X, Phone } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -13,14 +14,30 @@ export default function Navbar() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex justify-between h-20 items-center">
                     {/* Logo */}
-                    <div className="flex-shrink-0 flex items-center">
-                        <Link href="/" className="text-2xl font-bold text-slate-900 tracking-tight group">
-                            Swift<span className="text-brand group-hover:text-brand-light transition-colors">Home</span><span className="text-accent group-hover:text-accent-light transition-colors">Buyers</span>
+                    <div className="flex-shrink-0 flex items-center mr-8">
+                        <Link href="/" className="flex items-center gap-2.5 group">
+                            <div className="relative w-12 h-12 md:w-14 md:h-14 flex-shrink-0">
+                                <Image
+                                    src="/logo_nobg.png"
+                                    alt="True Home Capital Logo"
+                                    fill
+                                    className="object-contain"
+                                    priority
+                                />
+                            </div>
+                            <div className="flex flex-col -space-y-1.5 md:-space-y-2.0 justify-center">
+                                <span className="text-xl md:text-2xl font-bold text-brand-dark tracking-tight uppercase leading-tight whitespace-nowrap">
+                                    TrueHome
+                                </span>
+                                <span className="text-xs md:text-lg font-bold text-accent uppercase tracking-widest leading-none whitespace-nowrap">
+                                    Capital
+                                </span>
+                            </div>
                         </Link>
                     </div>
 
                     {/* Desktop Menu */}
-                    <div className="hidden md:flex items-center space-x-8">
+                    <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
                         <Link href="#how-it-works" className="text-slate-600 hover:text-brand font-medium transition-colors">
                             How it Works
                         </Link>
