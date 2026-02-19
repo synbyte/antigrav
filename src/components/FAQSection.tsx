@@ -42,11 +42,15 @@ export default function FAQSection() {
         <section id="faq" className="section-padding bg-slate-50/50 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand to-transparent opacity-20"></div>
             <div className="container-width relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-20">
+                <div className="text-center max-w-3xl mx-auto mb-20 relative">
+                    {/* Background Question Mark */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] text-[16rem] md:text-[24rem] lg:text-[28rem] font-black text-slate-200/60 select-none pointer-events-none -z-10">
+                        ?
+                    </div>
                     <div className="inline-flex items-center px-4 py-2 rounded-full bg-brand/5 border border-brand/10 text-brand font-bold text-sm mb-6">
                         Got Questions?
                     </div>
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight relative z-10">
                         Frequently Asked <span className="text-brand">Questions</span>
                     </h2>
                     <p className="text-xl text-slate-600 leading-relaxed font-medium">

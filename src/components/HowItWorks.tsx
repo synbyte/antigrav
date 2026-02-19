@@ -26,8 +26,17 @@ export default function HowItWorks() {
         <section id="how-it-works" className="section-padding bg-slate-50 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-brand/5 rounded-full blur-[120px] -z-10"></div>
             <div className="container-width relative z-10">
-                <div className="text-center max-w-3xl mx-auto mb-16">
-                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight">
+                <div className="text-center max-w-3xl mx-auto mb-16 relative">
+                    {/* Background Logo */}
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[45%] md:-translate-y-[55%] lg:-translate-y-[55%] w-64 h-64 md:w-96 md:h-96 opacity-10 select-none pointer-events-none -z-10">
+                        <Image
+                            src="/logo_nobg.png"
+                            alt=""
+                            fill
+                            className="object-contain"
+                        />
+                    </div>
+                    <h2 className="text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight relative z-10">
                         How It Works
                     </h2>
                     <p className="text-xl text-slate-600 leading-relaxed font-medium">
