@@ -63,7 +63,7 @@
     background: linear-gradient(to bottom,
         transparent,
         rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
-    font-family: 'Inter', sans-serif;
+    font-family: var(--font-poppins), sans-serif;
   }
 }
 

@@ -46,7 +46,7 @@ export default function HowItWorks() {
                             className="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-slate-100 group flex flex-col h-full"
                         >
                             {/* Illustration Container - Stays White */}
-                            <div className="relative h-64 bg-white flex items-center justify-center p-8">
+                            <div className="relative h-80 bg-white flex items-center justify-center p-2">
                                 <div className="absolute inset-0 bg-gradient-to-br from-brand/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <div className="relative w-full h-full transform group-hover:scale-105 transition-transform duration-500 ease-out">
                                     <Image

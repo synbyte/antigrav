@@ -7,14 +7,15 @@ import { motion } from 'framer-motion';
 export default function HeroSection() {
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
-            {/* Background Image with Brand Blue Overlay */}
-            <div className="absolute inset-0 z-0 overflow-hidden bg-brand">
+            {/* Background Image with Dark Overlay */}
+            <div className="absolute inset-0 z-0 overflow-hidden bg-slate-900">
                 <div
-                    className="absolute inset-0 opacity-30 bg-cover bg-center bg-no-repeat"
-                    style={{ backgroundImage: 'url(/developers-that-buy-your-home-ohio.webp)' }}
+                    className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat grayscale-[20%]"
+                    style={{ backgroundImage: 'url(/hero1.jpg)' }}
                 ></div>
-                {/* Solid Brand Blue Filter */}
-                <div className="absolute inset-0 bg-brand/60 mix-blend-multiply"></div>
+                {/* Gradient Overlays for Depth and Readability */}
+                <div className="absolute inset-0 bg-linear-to-r from-brand-dark/80 via-brand-dark/40 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent"></div>
             </div>
 
             <div className="container-width relative z-10">
@@ -34,14 +35,14 @@ export default function HeroSection() {
                             We are currently buying in your area
                         </div>
 
-                        <h1 className="text-4xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight">
+                        <h1 className="text-4xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight drop-shadow-2xl">
                             Sell Your House <br />
-                            <span className="text-accent">
+                            <span className="text-accent drop-shadow-md">
                                 Without the Stress
                             </span>
                         </h1>
 
-                        <p className="text-xl text-slate-100 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium">
+                        <p className="text-xl text-white/90 leading-relaxed max-w-2xl mx-auto lg:mx-0 font-medium drop-shadow-lg">
                             No repairs, no fees, no waiting. Get your <span className="text-accent font-bold underline decoration-accent/40">fair cash offer</span> today and close on your timeline.
                         </p>
 
@@ -50,7 +51,7 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10 shadow-sm"
+                                className="flex items-center bg-black/20 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20 shadow-sm"
                             >
                                 <CheckCircle2 className="w-5 h-5 text-accent-light mr-2" />
                                 <span>No Repairs Needed</span>
@@ -59,7 +60,7 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.3 }}
-                                className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10 shadow-sm"
+                                className="flex items-center bg-black/20 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20 shadow-sm"
                             >
                                 <CheckCircle2 className="w-5 h-5 text-accent-light mr-2" />
                                 <span>No Agent Fees</span>
@@ -68,7 +69,7 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.4 }}
-                                className="flex items-center bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/10 shadow-sm"
+                                className="flex items-center bg-black/20 backdrop-blur-md px-4 py-2 rounded-lg border border-white/20 shadow-sm"
                             >
                                 <CheckCircle2 className="w-5 h-5 text-accent-light mr-2" />
                                 <span>Close within 14 Days</span>
@@ -90,7 +91,7 @@ export default function HeroSection() {
                                 </div>
                                 Call Now: (555) 123-4567
                             </a>
-                            <p className="text-white/60 text-sm mt-3 font-medium">
+                            <p className="text-white/80 text-sm mt-3 font-medium drop-shadow-sm">
                                 Speak directly with a buyer today. No obligation.
                             </p>
                         </motion.div>
