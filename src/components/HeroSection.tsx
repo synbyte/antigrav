@@ -8,14 +8,14 @@ export default function HeroSection() {
     return (
         <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
             {/* Background Image with Dark Overlay */}
-            <div className="absolute inset-0 z-0 overflow-hidden bg-slate-300">
+            <div className="absolute inset-0 z-0 overflow-hidden bg-slate-100">
                 <div
-                    className="absolute inset-0 opacity-60 bg-cover bg-center bg-no-repeat grayscale-[20%]"
+                    className="absolute inset-0 opacity-45 bg-cover bg-center bg-no-repeat grayscale-[20%]"
                     style={{ backgroundImage: 'url(/hero1.jpg)' }}
                 ></div>
                 {/* Gradient Overlays for Depth and Readability */}
-                <div className="absolute inset-0 bg-linear-to-r from-brand-dark/80 via-brand-dark/40 to-transparent"></div>
-                <div className="absolute inset-0 bg-linear-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-r from-brand-dark/55 via-brand-dark/25 to-transparent"></div>
+                <div className="absolute inset-0 bg-linear-to-t from-slate-900/50 via-transparent to-transparent"></div>
             </div>
 
             <div className="container-width relative z-10">
