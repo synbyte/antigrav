@@ -42,7 +42,7 @@ export default function Testimonials() {
 
                 <div className="grid md:grid-cols-3 gap-8">
                     {reviews.map((review, index) => (
-                        <div key={index} className="bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                        <div key={index} className="bg-white/20 backdrop-blur-sm p-8 rounded-3xl border border-white/10 shadow-xl hover:shadow-2xl transition-all duration-300 group">
                             <div className="flex items-center mb-6">
                                 {review.image ? (
                                     <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0 border-2 border-white/20 group-hover:border-accent transition-colors">

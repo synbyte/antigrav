@@ -12,6 +12,7 @@ import Image from 'next/image';
 import SituationsSection from '@/components/SituationsSection';
 import TrustSection from '@/components/TrustSection';
 import FAQSection from '@/components/FAQSection';
+import FinalCTASection from '@/components/FinalCTASection';
 
 const SectionWrapper = ({ children, id, className }: { children: React.ReactNode; id?: string; className?: string }) => (
   <motion.div
@@ -76,23 +77,10 @@ export default function Home() {
         <FAQSection />
       </SectionWrapper>
       <SectionWrapper>
-        <BuyersSection />
+        <FinalCTASection />
       </SectionWrapper>
-      <SectionWrapper id="contact" className="section-padding bg-brand text-center">
-        <div className="container-width">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready To Sell Your House Fast?
-          </h2>
-          <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Get your no-obligation fair cash offer today. It takes less than 2 minutes!
-          </p>
-          <a
-            href="#"
-            className="inline-block bg-white text-brand px-8 py-4 rounded-lg font-bold text-lg hover:bg-blue-50 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
-          >
-            Get My Cash Offer Now
-          </a>
-        </div>
+      <SectionWrapper>
+        <BuyersSection />
       </SectionWrapper>
       <Footer />
     </main>

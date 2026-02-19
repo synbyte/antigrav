@@ -6,11 +6,11 @@ import { motion } from 'framer-motion';
 
 export default function HeroSection() {
     return (
-        <section className="relative pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+        <section className="relative pt-28 pb-8 lg:pt-40 lg:pb-28 overflow-hidden">
             {/* Background Image with Dark Overlay */}
             <div className="absolute inset-0 z-0 overflow-hidden bg-slate-100">
                 <div
-                    className="absolute inset-0 opacity-45 bg-cover bg-center bg-no-repeat grayscale-[20%]"
+                    className="absolute inset-0 opacity-75 bg-cover bg-center bg-no-repeat grayscale-[20%]"
                     style={{ backgroundImage: 'url(/hero1.jpg)' }}
                 ></div>
                 {/* Gradient Overlays for Depth and Readability */}
@@ -19,15 +19,15 @@ export default function HeroSection() {
             </div>
 
             <div className="container-width relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-4 lg:gap-12 items-center">
                     {/* Text Content */}
                     <motion.div
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6 }}
-                        className="space-y-8 text-center lg:text-left"
+                        className="space-y-3 lg:space-y-8 text-center lg:text-left"
                     >
-                        <div className="inline-flex items-center shadow-xl px-4 py-2 rounded-full bg-black/40 border border-white/30 text-white font-bold text-sm backdrop-blur-md">
+                        <div className="hidden lg:inline-flex items-center shadow-xl px-4 py-2 rounded-full bg-black/40 border border-white/30 text-white font-bold text-sm backdrop-blur-md">
                             <span className="relative flex h-2 w-2 mr-2">
                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
                                 <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
@@ -35,21 +35,21 @@ export default function HeroSection() {
                             We are currently buying in your area
                         </div>
 
-                        <h1 className="text-4xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight [text-shadow:_0_2px_10px_rgb(0_0_0_/_40%),_0_1px_2px_rgb(0_0_0_/_60%)]">
+                        <h1 className="text-3xl lg:text-7xl font-extrabold text-white leading-[1.1] tracking-tight [text-shadow:_0_2px_10px_rgb(0_0_0_/_40%),_0_1px_2px_rgb(0_0_0_/_60%)]">
                             Sell Your House <br />
                             <span className="text-accent [text-shadow:_0_2px_10px_rgb(0_0_0_/_40%),_0_1px_2px_rgb(0_0_0_/_60%)]">
                                 Without the Stress
                             </span>
                         </h1>
 
-                        <p className="text-xl text-white leading-relaxed max-w-2xl mx-auto lg:mx-0 font-semibold [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]">
+                        <p className="text-base lg:text-xl text-white/90 lg:text-white leading-relaxed max-w-2xl mx-auto lg:mx-0 font-semibold [text-shadow:_0_1px_4px_rgb(0_0_0_/_60%)]">
                             No repairs, no fees, no waiting. Get your <span className="relative inline-block text-accent font-bold">
                                 fair cash offer
                                 <span className="absolute -bottom-1 -left-1 w-[105%] h-2 bg-accent/65 -rotate-1 skew-x-[15deg] rounded-[100%_2px_100%_2px] pointer-events-none"></span>
                             </span> today and close on your timeline.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start text-white font-semibold">
+                        <div className="hidden lg:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start text-white font-semibold">
                             <motion.div
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
@@ -83,18 +83,18 @@ export default function HeroSection() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5, duration: 0.5 }}
-                            className="pt-4"
+                            className="pt-1 lg:pt-4"
                         >
                             <a
                                 href="tel:+15551234567"
-                                className="inline-flex items-center justify-center bg-accent text-white px-8 py-5 rounded-full font-extrabold text-xl hover:bg-accent-dark transition-all shadow-[0_0_30px_rgba(212,176,89,0.3)] hover:shadow-[0_0_40px_rgba(212,176,89,0.5)] transform hover:-translate-y-1 w-full sm:w-auto group"
+                                className="inline-flex items-center justify-center bg-accent text-white px-6 lg:px-8 py-3 lg:py-5 rounded-full font-extrabold text-base lg:text-xl hover:bg-accent-dark transition-all shadow-[0_0_30px_rgba(212,176,89,0.3)] hover:shadow-[0_0_40px_rgba(212,176,89,0.5)] transform hover:-translate-y-1 group"
                             >
-                                <div className="bg-white/20 p-2 rounded-full mr-3 group-hover:scale-110 transition-transform">
-                                    <Phone className="w-6 h-6 fill-current" />
+                                <div className="bg-white/20 p-1.5 lg:p-2 rounded-full mr-2 lg:mr-3 group-hover:scale-110 transition-transform">
+                                    <Phone className="w-4 h-4 lg:w-6 lg:h-6 fill-current" />
                                 </div>
                                 Call Now: (555) 123-4567
                             </a>
-                            <p className="text-white text-sm mt-3 font-semibold [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]">
+                            <p className="hidden lg:block text-white text-sm mt-3 font-semibold [text-shadow:_0_1px_2px_rgb(0_0_0_/_80%)]">
                                 Speak directly with a buyer today. No obligation.
                             </p>
                         </motion.div>
@@ -108,6 +108,26 @@ export default function HeroSection() {
                         className="lg:pl-10"
                     >
                         <LeadForm />
+                    </motion.div>
+
+                    {/* Mobile-only: chips below the form */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 10 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.5 }}
+                        className="lg:hidden space-y-3 text-center"
+                    >
+                        <div className="flex flex-wrap gap-2 justify-center">
+                            {['No Repairs Needed', 'No Agent Fees', 'Close within 14 Days'].map((item) => (
+                                <div
+                                    key={item}
+                                    className="flex items-center bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/20 text-white text-sm font-semibold"
+                                >
+                                    <CheckCircle2 className="w-4 h-4 text-accent-light mr-1.5 flex-shrink-0" />
+                                    {item}
+                                </div>
+                            ))}
+                        </div>
                     </motion.div>
                 </div>
             </div>
