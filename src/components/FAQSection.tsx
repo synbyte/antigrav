@@ -63,8 +63,8 @@ export default function FAQSection() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.05 }}
                             className={`bg-white rounded-2xl border-2 transition-all duration-300 ${openIndex === index
-                                    ? 'border-brand shadow-[0_10px_30px_rgba(30,58,138,0.1)] ring-4 ring-brand/5'
-                                    : 'border-slate-100 shadow-sm hover:border-slate-200 hover:shadow-md'
+                                ? 'border-brand shadow-[0_10px_30px_rgba(30,58,138,0.1)] ring-4 ring-brand/5'
+                                : 'border-slate-100 shadow-sm hover:border-slate-200 hover:shadow-md'
                                 } overflow-hidden`}
                         >
                             <button
