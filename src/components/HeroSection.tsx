@@ -10,7 +10,7 @@ export default function HeroSection() {
             {/* Background Image with Dark Overlay */}
             <div className="absolute inset-0 z-0 overflow-hidden bg-slate-100">
                 <div
-                    className="absolute inset-0 opacity-75 bg-cover bg-center bg-no-repeat grayscale-[20%]"
+                    className="absolute inset-0 opacity-100 bg-cover bg-center bg-no-repeat grayscale-[20%]"
                     style={{ backgroundImage: 'url(/hero1.jpg)' }}
                 ></div>
                 {/* Gradient Overlays for Depth and Readability */}

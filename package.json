@@ -3,12 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "bun --bun next dev",
+    "build": "bun --bun next build",
+    "start": "bun --bun next start",
     "lint": "eslint"
   },
   "dependencies": {
+    "@copilotkit/react-core": "^1.51.4",
+    "@copilotkit/react-ui": "^1.51.4",
     "@supabase/supabase-js": "^2.84.0",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.554.0",

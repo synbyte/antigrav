@@ -15,7 +15,12 @@
   --background-start-rgb: 248, 250, 252;
   /* Slate 50 */
   --background-end-rgb: 255, 255, 255;
+
   /* White */
+  .copilotKitHeader {
+    @apply bg-brand text-white px-6 py-3 rounded-lg rounded-b-none font-semibold hover:bg-brand-dark transition-colors duration-200 shadow-lg hover:shadow-xl;
+  }
+
 }
 
 @keyframes gradient {
@@ -53,6 +58,8 @@
   animation: pulse-slow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
+
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -88,5 +95,18 @@
     background: radial-gradient(circle at top left, var(--color-brand-light) 0%, transparent 40%),
       radial-gradient(circle at bottom right, var(--color-accent-light) 0%, transparent 40%),
       linear-gradient(to bottom right, #f8fafc, #ffffff);
+  }
+}
+
+/* Fix CopilotKit popup on mobile to not go under the navbar */
+.copilotKitPopup {
+  z-index: 100 !important;
+}
+
+
+
+@media (max-width: 768px) {
+  .copilotKitPopup {
+    margin-top: 85px !important;
   }
 }

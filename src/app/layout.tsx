@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { CopilotKit } from "@copilotkit/react-core";
+import "@copilotkit/react-ui/styles.css";
 
 const poppins = Poppins({
   variable: "--font-poppins",
@@ -38,8 +40,10 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} antialiased`}
       >
-        <JsonLd />
-        {children}
+        <CopilotKit publicApiKey="ck_pub_b6c29a1db431c592d75d490eace6c893">
+          <JsonLd />
+          {children}
+        </CopilotKit>
       </body>
     </html>
   );
