@@ -98,9 +98,9 @@ export default function LeadForm() {
 
             <div className="p-4 pt-6 lg:p-8 lg:pt-10">
                 <form onSubmit={handleSubmit} className="space-y-2.5 lg:space-y-5">
-                    <div className="space-y-2.5 lg:space-y-4">
+                    <div className="space-y-2.5 lg:space-y-5">
                         <div className="relative">
-                            <label htmlFor="name" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                            <label htmlFor="name" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Full Name
                             </label>
                             <input
@@ -115,7 +115,7 @@ export default function LeadForm() {
                         </div>
 
                         <div className="relative">
-                            <label htmlFor="address" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                            <label htmlFor="address" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Property Address
                             </label>
                             <input
@@ -130,8 +130,8 @@ export default function LeadForm() {
                         </div>
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div>
-                                <label htmlFor="email" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                            <div className="relative">
+                                <label htmlFor="email" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                     Email Address
                                 </label>
                                 <input
@@ -145,8 +145,8 @@ export default function LeadForm() {
                                 />
                             </div>
 
-                            <div>
-                                <label htmlFor="phone" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                            <div className="relative">
+                                <label htmlFor="phone" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                     Phone Number
                                 </label>
                                 <input
@@ -161,8 +161,8 @@ export default function LeadForm() {
                             </div>
                         </div>
 
-                        <div className="hidden lg:block">
-                            <label htmlFor="message" className="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-1.5 ml-1">
+                        <div className="hidden lg:block relative mt-2 md:mt-0">
+                            <label htmlFor="message" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Message (Optional)
                             </label>
                             <textarea
