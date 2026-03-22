@@ -11,6 +11,7 @@ export default function LeadForm() {
         email: '',
         phone: '',
         message: '',
+        agree: false,
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -42,6 +43,7 @@ export default function LeadForm() {
                 email: '',
                 phone: '',
                 message: '',
+                agree: false,
             });
         } catch (error: any) {
             console.error('Error submitting form:', error);
@@ -174,6 +176,30 @@ export default function LeadForm() {
                         </div>
                     </div>
 
+                    <div className="flex items-start relative z-20 group/agree">
+                        <input
+                            id="agree"
+                            name="agree"
+                            type="checkbox"
+                            required
+                            checked={formData.agree}
+                            onChange={(e) => setFormData({ ...formData, agree: e.target.checked })}
+                            className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
+                        />
+                        <div className="ml-3 text-sm flex-1">
+                            <label htmlFor="agree" className="font-medium text-xs lg:text-sm text-slate-500 block leading-relaxed cursor-pointer">
+                                I agree to the <a href="/terms-and-conditions" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Terms & Conditions</a> and <a href="/privacy-policy" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Privacy Policy</a>
+                            </label>
+                            <div className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${formData.agree ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] lg:group-hover/agree:grid-rows-[1fr]'}`}>
+                                <div className="overflow-hidden">
+                                    <div className={`pt-2 text-[10px] lg:text-xs text-slate-400 transition-opacity duration-300 ease-in-out ${formData.agree ? 'opacity-100' : 'opacity-0 lg:group-hover/agree:opacity-100'}`}>
+                                        By submitting this form, you consent to receive SMS messages and/or calls from True Home Capital LLC. To unsubscribe, follow the instructions provided in our communications. Msg & data rates may apply.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {status === 'error' && (
                         <div className="text-red-500 text-sm font-bold text-center bg-red-50 p-3 rounded-xl border-2 border-red-100">
                             {errorMessage}
@@ -182,7 +208,7 @@ export default function LeadForm() {
 
                     <button
                         type="submit"
-                        disabled={status === 'loading'}
+                        disabled={status === 'loading' || !formData.agree}
                         className="w-full bg-accent text-white py-3 lg:py-5 rounded-2xl font-black text-base lg:text-xl hover:bg-accent-dark transition-all shadow-[0_10px_20px_rgba(212,176,89,0.3)] hover:shadow-[0_15px_30px_rgba(212,176,89,0.4)] transform hover:-translate-y-1 active:translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                     >
                         {status === 'loading' ? (
