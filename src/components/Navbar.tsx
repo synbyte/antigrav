@@ -58,11 +58,11 @@ export default function Navbar() {
                                 </Link>
                             ))}
                             <a
-                                href="tel:+15551234567"
+                                href="tel:+16232813654"
                                 className="flex items-center gap-2 ml-2 px-4 py-2 rounded-full text-brand-dark font-semibold text-sm border border-brand/20 hover:border-brand/50 hover:bg-brand/5 transition-all duration-200"
                             >
                                 <Phone className="w-3.5 h-3.5" />
-                                (555) 123-4567
+                                (623) 281-3654
                             </a>
                             <Link
                                 href="#contact"
@@ -130,10 +130,10 @@ export default function Navbar() {
                                     For Investors
                                 </Link>
                                 <a
-                                    href="tel:+15551234567"
+                                    href="tel:+16232813654"
                                     className="block px-3 py-3 text-base font-medium text-slate-900 hover:text-brand hover:bg-slate-50 rounded-md"
                                 >
-                                    Call (555) 123-4567
+                                    Call (623) 281-3654
                                 </a>
                                 <div className="pt-4">
                                     <Link

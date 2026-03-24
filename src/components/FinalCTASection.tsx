@@ -43,7 +43,7 @@ export default function FinalCTASection() {
 
                             <div className="pt-8 border-t border-slate-200 text-center lg:text-left">
                                 <p className="text-slate-500 font-medium">
-                                    Prefer to talk? Call us at <a href="tel:+15551234567" className="text-brand font-bold hover:underline">(555) 123-4567</a>
+                                    Prefer to talk? Call us at <a href="tel:+16232813654" className="text-brand font-bold hover:underline">(623) 281-3654</a>
                                 </p>
                             </div>
                         </div>

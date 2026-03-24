@@ -11,10 +11,12 @@ export default function LeadForm() {
         email: '',
         phone: '',
         message: '',
-        agree: false,
+        agreeTerms: false,
+        agreeCommunications: false,
     });
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -43,7 +45,8 @@ export default function LeadForm() {
                 email: '',
                 phone: '',
                 message: '',
-                agree: false,
+                agreeTerms: false,
+                agreeCommunications: false,
             });
         } catch (error: any) {
             console.error('Error submitting form:', error);
@@ -154,7 +157,7 @@ export default function LeadForm() {
                                     id="phone"
                                     required
                                     className="w-full px-3 py-2.5 lg:px-4 lg:py-3.5 rounded-xl border-2 border-slate-100 focus:border-brand focus:ring-4 focus:ring-brand/5 transition-all outline-none text-slate-900 font-medium placeholder:text-slate-400 text-sm lg:text-base"
-                                    placeholder="(555) 123-4567"
+                                    placeholder="(623) 281-3654"
                                     value={formData.phone}
                                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                 />
@@ -176,26 +179,41 @@ export default function LeadForm() {
                         </div>
                     </div>
 
-                    <div className="flex items-start relative z-20 group/agree">
-                        <input
-                            id="agree"
-                            name="agree"
-                            type="checkbox"
-                            required
-                            checked={formData.agree}
-                            onChange={(e) => setFormData({ ...formData, agree: e.target.checked })}
-                            className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
-                        />
-                        <div className="ml-3 text-sm flex-1">
-                            <label htmlFor="agree" className="font-medium text-xs lg:text-sm text-slate-500 block leading-relaxed cursor-pointer">
-                                I agree to the <a href="/terms-and-conditions" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Terms & Conditions</a> and <a href="/privacy-policy" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Privacy Policy</a>
-                            </label>
-                            <div className={`grid transition-[grid-template-rows] duration-300 ease-in-out ${formData.agree ? 'grid-rows-[1fr]' : 'grid-rows-[0fr] lg:group-hover/agree:grid-rows-[1fr]'}`}>
-                                <div className="overflow-hidden">
-                                    <div className={`pt-2 text-[10px] lg:text-xs text-slate-400 transition-opacity duration-300 ease-in-out ${formData.agree ? 'opacity-100' : 'opacity-0 lg:group-hover/agree:opacity-100'}`}>
-                                        By submitting this form, you consent to receive SMS messages and/or calls from True Home Capital LLC. To unsubscribe, follow the instructions provided in our communications. Msg & data rates may apply.
-                                    </div>
-                                </div>
+                    <div className="space-y-4">
+                        <div className="flex items-start relative z-20">
+                            <input
+                                id="agreeTerms"
+                                name="agreeTerms"
+                                type="checkbox"
+                                checked={formData.agreeTerms}
+                                onChange={(e) => setFormData({ ...formData, agreeTerms: e.target.checked })}
+                                className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
+                            />
+                            <div className="ml-3 text-sm flex-1">
+                                <label htmlFor="agreeTerms" className="font-medium text-xs lg:text-sm text-slate-500 block leading-relaxed cursor-pointer">
+                                    I agree to the <a href="/terms-and-conditions" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Terms & Conditions</a> and <a href="/privacy-policy" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Privacy Policy</a>.
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start relative z-20">
+                            <input
+                                id="agreeCommunications"
+                                name="agreeCommunications"
+                                type="checkbox"
+                                checked={formData.agreeCommunications}
+                                onChange={(e) => setFormData({ ...formData, agreeCommunications: e.target.checked })}
+                                className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
+                            />
+                            <div className="ml-3 text-sm flex-1">
+                                <label htmlFor="agreeCommunications" className="font-medium text-xs lg:text-sm text-slate-500 block leading-relaxed cursor-pointer">
+                                    I agree to receive transactional or conversational communications from True Home Capital
+                                    {!isExpanded ? (
+                                        <>... <button type="button" onClick={(e) => { e.preventDefault(); setIsExpanded(true); }} className="text-brand hover:underline font-bold ml-1">Read more</button></>
+                                    ) : (
+                                        <span> via text messages, phone calls, and emails related to my real estate inquiry, such as property details, responses, and appointment confirmations. Message frequency varies. Reply STOP to opt out. Reply HELP for help. Msg &amp; data rates may apply. Your information is secure and will not be sold or shared with third parties or affiliates for promotional purposes. <button type="button" onClick={(e) => { e.preventDefault(); setIsExpanded(false); }} className="text-brand hover:underline font-bold ml-1">Show less</button></span>
+                                    )}
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -208,7 +226,7 @@ export default function LeadForm() {
 
                     <button
                         type="submit"
-                        disabled={status === 'loading' || !formData.agree}
+                        disabled={status === 'loading'}
                         className="w-full bg-accent text-white py-3 lg:py-5 rounded-2xl font-black text-base lg:text-xl hover:bg-accent-dark transition-all shadow-[0_10px_20px_rgba(212,176,89,0.3)] hover:shadow-[0_15px_30px_rgba(212,176,89,0.4)] transform hover:-translate-y-1 active:translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
                     >
                         {status === 'loading' ? (

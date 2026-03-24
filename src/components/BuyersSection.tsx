@@ -132,7 +132,7 @@ export default function BuyersSection() {
                                             id="buyer-phone"
                                             required
                                             className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-brand focus:border-brand transition-all"
-                                            placeholder="(555) 123-4567"
+                                            placeholder="(623) 281-3654"
                                             value={formData.phone}
                                             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                                         />

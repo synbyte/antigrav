@@ -5,7 +5,7 @@ export default function JsonLd() {
         "name": "True Home Capital",
         "description": "We buy houses in Dallas, TX. Get a fair cash offer for your home in any condition.",
         "url": "https://truehomecapital.com",
-        "telephone": "+15551234567",
+        "telephone": "+16232813654",
         "address": {
             "@type": "PostalAddress",
             "streetAddress": "123 Real Estate Blvd, Suite 100",
