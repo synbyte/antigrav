@@ -191,7 +191,7 @@ export default function LeadForm() {
                             />
                             <div className="ml-3 text-sm flex-1">
                                 <label htmlFor="agreeTerms" className="font-medium text-xs lg:text-sm text-slate-500 block leading-relaxed cursor-pointer">
-                                    I agree to the <a href="/terms-and-conditions" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Terms & Conditions</a> and <a href="/privacy-policy" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline">Privacy Policy</a>.
+                                    I agree to the <a href="/terms-and-conditions" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline font-bold">Terms & Conditions</a> and <a href="/privacy-policy" onClick={(e) => e.stopPropagation()} className="text-brand hover:underline font-bold">Privacy Policy</a>.
                                 </label>
                             </div>
                         </div>
