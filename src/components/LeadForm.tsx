@@ -33,6 +33,8 @@ export default function LeadForm() {
                         email: formData.email,
                         phone: formData.phone,
                         message: formData.message,
+                        agreeTerms: formData.agreeTerms,
+                        agreeCommunications: formData.agreeCommunications,
                     },
                 ]);
 
@@ -49,9 +51,9 @@ export default function LeadForm() {
                 agreeCommunications: false,
             });
         } catch (error: any) {
-            console.error('Error submitting form:', error);
+            console.error('Error submitting form:', JSON.stringify(error, null, 2));
             setStatus('error');
-            setErrorMessage(error.message || 'Something went wrong. Please try again.');
+            setErrorMessage(error?.message || error?.details || 'Something went wrong. Please try again. Please view the console for more details.');
         }
     };
 
