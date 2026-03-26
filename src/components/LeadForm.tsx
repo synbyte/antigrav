@@ -40,6 +40,18 @@ export default function LeadForm() {
 
             if (error) throw error;
 
+            // Forward the lead data to Resimpli after a successful database save
+            try {
+                await fetch('/api/resimpli', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData),
+                });
+            } catch (resimpliError) {
+                console.warn('Could not forward to Resimpli API route:', resimpliError);
+                // Continue execution to show success state, as the local database save worked
+            }
+
             setStatus('success');
             setFormData({
                 name: '',
@@ -105,7 +117,7 @@ export default function LeadForm() {
                 <form onSubmit={handleSubmit} className="space-y-2.5 lg:space-y-5">
                     <div className="space-y-2.5 lg:space-y-5">
                         <div className="relative">
-                            <label htmlFor="name" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
+                            <label htmlFor="name" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Full Name
                             </label>
                             <input
@@ -120,7 +132,7 @@ export default function LeadForm() {
                         </div>
 
                         <div className="relative">
-                            <label htmlFor="address" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
+                            <label htmlFor="address" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Property Address
                             </label>
                             <input
@@ -136,7 +148,7 @@ export default function LeadForm() {
 
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="relative">
-                                <label htmlFor="email" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
+                                <label htmlFor="email" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                     Email Address
                                 </label>
                                 <input
@@ -151,7 +163,7 @@ export default function LeadForm() {
                             </div>
 
                             <div className="relative">
-                                <label htmlFor="phone" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
+                                <label htmlFor="phone" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                     Phone Number
                                 </label>
                                 <input
@@ -167,7 +179,7 @@ export default function LeadForm() {
                         </div>
 
                         <div className="hidden lg:block relative mt-2 md:mt-0">
-                            <label htmlFor="message" className="absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
+                            <label htmlFor="message" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Message (Optional)
                             </label>
                             <textarea
