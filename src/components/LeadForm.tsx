@@ -16,8 +16,12 @@ const formSchema = z.object({
             message: 'Phone number must be at least 10 digits.',
         }),
     message: z.string().optional(),
-    agreeTerms: z.boolean().optional(),
-    agreeCommunications: z.boolean().optional(),
+    agreeTerms: z.literal(true, {
+        errorMap: () => ({ message: 'You must agree to the Terms & Conditions and Privacy Policy.' }),
+    }),
+    agreeCommunications: z.literal(true, {
+        errorMap: () => ({ message: 'You must agree to receive communications.' }),
+    }),
 });
 
 export default function LeadForm() {
@@ -224,6 +228,7 @@ export default function LeadForm() {
                                 id="agreeTerms"
                                 name="agreeTerms"
                                 type="checkbox"
+
                                 checked={formData.agreeTerms}
                                 onChange={(e) => setFormData({ ...formData, agreeTerms: e.target.checked })}
                                 className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
@@ -240,6 +245,7 @@ export default function LeadForm() {
                                 id="agreeCommunications"
                                 name="agreeCommunications"
                                 type="checkbox"
+
                                 checked={formData.agreeCommunications}
                                 onChange={(e) => setFormData({ ...formData, agreeCommunications: e.target.checked })}
                                 className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
@@ -258,7 +264,7 @@ export default function LeadForm() {
                     </div>
 
                     {status === 'error' && (
-                        <div className="text-red-500 text-sm font-bold text-center bg-red-50 p-3 rounded-xl border-2 border-red-100">
+                        <div className="text-red-500 text-xs font-bold text-center bg-red-50 p-3 rounded-xl border-2 border-red-100">
                             {errorMessage}
                         </div>
                     )}
