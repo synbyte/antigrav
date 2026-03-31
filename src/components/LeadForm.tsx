@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { Lock, ArrowRight, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
 import { z } from 'zod';
+import { motion } from 'framer-motion';
 
 const formSchema = z.object({
     name: z.string().trim().min(1, 'Name is required.'),
@@ -121,7 +122,7 @@ export default function LeadForm() {
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-2 border-brand relative group overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-2 border-brand relative  overflow-hidden">
             {/* Colorful Header */}
             <div className="bg-gradient-to-r from-brand to-brand-dark px-5 py-5 lg:px-8 lg:py-6 text-white relative">
                 <div className="relative z-10">
@@ -149,7 +150,9 @@ export default function LeadForm() {
                             <label htmlFor="name" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Full Name
                             </label>
-                            <input
+                            <motion.input
+                                whileFocus={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.99 }}
                                 type="text"
                                 id="name"
                                 required
@@ -164,7 +167,9 @@ export default function LeadForm() {
                             <label htmlFor="address" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Property Address
                             </label>
-                            <input
+                            <motion.input
+                                whileFocus={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.99 }}
                                 type="text"
                                 id="address"
                                 required
@@ -180,7 +185,9 @@ export default function LeadForm() {
                                 <label htmlFor="email" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                     Email Address
                                 </label>
-                                <input
+                                <motion.input
+                                    whileFocus={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.99 }}
                                     type="email"
                                     id="email"
                                     required
@@ -195,7 +202,9 @@ export default function LeadForm() {
                                 <label htmlFor="phone" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                     Phone Number
                                 </label>
-                                <input
+                                <motion.input
+                                    whileFocus={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.99 }}
                                     type="tel"
                                     id="phone"
                                     required
@@ -211,7 +220,9 @@ export default function LeadForm() {
                             <label htmlFor="message" className="rounded-b-lg absolute top-0 -translate-y-1/2 left-3 bg-white px-1 text-[10px] lg:text-[11px] font-bold text-slate-500 uppercase tracking-wider z-10">
                                 Message (Optional)
                             </label>
-                            <textarea
+                            <motion.textarea
+                                whileFocus={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.99 }}
                                 id="message"
                                 rows={2}
                                 className="w-full px-4 py-3.5 rounded-xl border-2 border-slate-100 focus:border-brand focus:ring-4 focus:ring-brand/5 transition-all outline-none text-slate-900 font-medium placeholder:text-slate-400 resize-none"
@@ -224,14 +235,16 @@ export default function LeadForm() {
 
                     <div className="space-y-4">
                         <div className="flex items-start relative z-20">
-                            <input
+                            <motion.input
+                                whileHover={{ scale: 1.15 }}
+                                whileTap={{ scale: 0.85 }}
                                 id="agreeTerms"
                                 name="agreeTerms"
                                 type="checkbox"
 
                                 checked={formData.agreeTerms}
                                 onChange={(e) => setFormData({ ...formData, agreeTerms: e.target.checked })}
-                                className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
+                                className="mt-0.5 w-4 h-4 border border-slate-300 rounded-lg accent-brand cursor-pointer shrink-0 ease-in-out"
                             />
                             <div className="ml-3 text-sm flex-1">
                                 <label htmlFor="agreeTerms" className="font-medium text-xs lg:text-sm text-slate-500 block leading-relaxed cursor-pointer">
@@ -241,14 +254,16 @@ export default function LeadForm() {
                         </div>
 
                         <div className="flex items-start relative z-20">
-                            <input
+                            <motion.input
+                                whileHover={{ scale: 1.15 }}
+                                whileTap={{ scale: 0.85 }}
                                 id="agreeCommunications"
                                 name="agreeCommunications"
                                 type="checkbox"
 
                                 checked={formData.agreeCommunications}
                                 onChange={(e) => setFormData({ ...formData, agreeCommunications: e.target.checked })}
-                                className="mt-0.5 w-4 h-4 border border-slate-300 rounded bg-slate-50 focus:ring-3 focus:ring-brand-light cursor-pointer shrink-0"
+                                className="mt-0.5 w-4 h-4 border border-slate-300 rounded accent-brand cursor-pointer shrink-0"
                             />
                             <div className="ml-3 text-sm flex-1">
                                 <label htmlFor="agreeCommunications" className="font-medium text-xs lg:text-sm text-slate-500 block leading-relaxed cursor-pointer">
@@ -264,15 +279,17 @@ export default function LeadForm() {
                     </div>
 
                     {status === 'error' && (
-                        <div className="text-red-500 text-xs font-bold text-center bg-red-50 p-3 rounded-xl border-2 border-red-100">
+                        <div className="text-red-500 text-xs font-bold text-center bg-red-50 p-2 rounded-xl border-2 border-red-100">
                             {errorMessage}
                         </div>
                     )}
 
-                    <button
+                    <motion.button
+                        whileHover={{ scale: 1.02 }}
+                        whileTap={{ scale: 0.98 }}
                         type="submit"
                         disabled={status === 'loading'}
-                        className="w-full bg-accent text-white py-3 lg:py-5 rounded-2xl font-black text-base lg:text-xl hover:bg-accent-dark transition-all shadow-[0_10px_20px_rgba(212,176,89,0.3)] hover:shadow-[0_15px_30px_rgba(212,176,89,0.4)] transform hover:-translate-y-1 active:translate-y-0.5 flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed disabled:transform-none"
+                        className="w-full bg-accent text-white py-3 lg:py-5 rounded-2xl font-black text-base lg:text-xl hover:bg-accent-dark transition-all shadow-[0_10px_20px_rgba(212,176,89,0.3)] hover:shadow-[0_15px_30px_rgba(212,176,89,0.5)] flex items-center justify-center group disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                         {status === 'loading' ? (
                             <>
@@ -285,7 +302,7 @@ export default function LeadForm() {
                                 <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                             </>
                         )}
-                    </button>
+                    </motion.button>
 
                     <div className="flex items-center justify-center text-slate-400 text-xs font-bold uppercase tracking-widest mt-6">
                         <Lock className="w-4 h-4 mr-2 text-green-500" />
