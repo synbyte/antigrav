@@ -3,6 +3,22 @@
 import { useState } from 'react';
 import { Lock, ArrowRight, Loader2 } from 'lucide-react';
 import { supabase } from '@/lib/supabase';
+import { z } from 'zod';
+
+const formSchema = z.object({
+    name: z.string().trim().min(1, 'Name is required.'),
+    address: z.string().trim().min(1, 'Property Address is required.'),
+    email: z.string().trim().min(1, 'Email is required.').email('Please enter a valid email address.'),
+    phone: z.string()
+        .trim()
+        .regex(/^[\d\s\-\+\(\)\.]{10,25}$/, 'Please enter a valid phone number.')
+        .refine((val) => val.replace(/\D/g, '').length >= 10, {
+            message: 'Phone number must be at least 10 digits.',
+        }),
+    message: z.string().optional(),
+    agreeTerms: z.boolean().optional(),
+    agreeCommunications: z.boolean().optional(),
+});
 
 export default function LeadForm() {
     const [formData, setFormData] = useState({
@@ -20,6 +36,15 @@ export default function LeadForm() {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Validation with Zod
+        const result = formSchema.safeParse(formData);
+        if (!result.success) {
+            setStatus('error');
+            setErrorMessage(result.error.issues[0].message);
+            return;
+        }
+
         setStatus('loading');
         setErrorMessage('');
 
