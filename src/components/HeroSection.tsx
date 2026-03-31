@@ -102,9 +102,7 @@ export default function HeroSection() {
 
                     {/* Form Container */}
                     <motion.div
-                        initial={{ opacity: 0, x: 20 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
+
                         className="lg:pl-10"
                     >
                         <LeadForm />

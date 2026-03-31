@@ -101,7 +101,12 @@ export default function LeadForm() {
 
     if (status === 'success') {
         return (
-            <div className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-100 text-center">
+            <motion.div initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.4,
+                    scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                }} className="bg-white rounded-2xl shadow-2xl p-8 border border-slate-100 text-center">
                 <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                     <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -117,12 +122,17 @@ export default function LeadForm() {
                 >
                     Submit another property
                 </button>
-            </div>
+            </motion.div>
         );
     }
 
     return (
-        <div className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-2 border-brand relative  overflow-hidden">
+        <motion.div initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{
+                duration: 0.4,
+                scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+            }} className="bg-white rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.2)] border-2 border-brand relative  overflow-hidden">
             {/* Colorful Header */}
             <div className="bg-gradient-to-r from-brand to-brand-dark px-5 py-5 lg:px-8 lg:py-6 text-white relative">
                 <div className="relative z-10">
@@ -313,6 +323,6 @@ export default function LeadForm() {
 
             {/* Glowing Accent Border (subtle) */}
             <div className="absolute inset-0 border-2 border-transparent group-hover:border-accent/10 rounded-2xl pointer-events-none transition-colors duration-500"></div>
-        </div>
+        </motion.div>
     );
 }
