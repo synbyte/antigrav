@@ -3,17 +3,9 @@ export default function JsonLd() {
         "@context": "https://schema.org",
         "@type": "RealEstateListing",
         "name": "True Home Capital",
-        "description": "We buy houses in Dallas, TX. Get a fair cash offer for your home in any condition.",
+        "description": "We buy houses nationwide. Get a fair cash offer for your home in any condition.",
         "url": "https://truehomecapital.com",
         "telephone": "+16232813654",
-        "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "123 Real Estate Blvd, Suite 100",
-            "addressLocality": "Dallas",
-            "addressRegion": "TX",
-            "postalCode": "75201",
-            "addressCountry": "US"
-        },
         "geo": {
             "@type": "GeoCoordinates",
             "latitude": 32.7767,

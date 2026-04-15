@@ -31,11 +31,11 @@ const SectionWrapper = ({ children, id, className }: { children: React.ReactNode
 );
 
 export default function Home() {
-  const instructions = "You are a helpful assistant for True Home Capital based in Dallas, TX. Your goal is to help users sell their house to us for cash. Be friendly, professional, and concise. Do NOT make suggestions, if person asks if they can sell their house, tell them to submit contact form.";
+  const instructions = "You are a helpful assistant for True Home Capital based nationwide. Your goal is to help users sell their house to us for cash. Be friendly, professional, and concise. Do NOT make suggestions, if person asks if they can sell their house, tell them to submit contact form.";
 
   const websiteContext = `
 About True Home Capital: 
-We are a family-owned local real estate solutions company based in Dallas, TX. We buy houses for cash in any condition. Our goal is to provide a fair cash offer so homeowners can move on without the hassle of listing on the market.
+We are a family-owned real estate solutions company acting nationwide. We buy houses for cash in any condition. Our goal is to provide a fair cash offer so homeowners can move on without the hassle of listing on the market.
 
 How It Works:
 1. Submit Your Info: Fill out the short form with your property address and contact details. Takes < 2 mins.
@@ -96,7 +96,7 @@ Frequently Asked Questions:
                 About True Home Capital
               </h2>
               <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                We are a local real estate solutions company based in Dallas, TX. We're a family-owned business and focus on helping homeowners like you find solutions for your problem whether you're going through a foreclosure, can't sell your property, or just need to sell their house for all kinds of reasons.
+                We are a real estate solutions company based nationwide. We're a family-owned business and focus on helping homeowners like you find solutions for your problem whether you're going through a foreclosure, can't sell your property, or just need to sell their house for all kinds of reasons.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Our goal is to provide you with a fair cash offer for your home, so you can move on with your life without the stress and hassle of listing it on the market.

@@ -43,28 +43,26 @@ export default function Footer() {
                     <div>
                         <h4 className="text-lg font-bold text-white mb-6">Service Areas</h4>
                         <ul className="space-y-3">
-                            <li>Dallas, TX</li>
-                            <li>Fort Worth, TX</li>
-                            <li>Houston, TX</li>
-                            <li>Austin, TX</li>
-                            <li>San Antonio, TX</li>
+                            <li>Arizona</li>
+                            <li>Texas</li>
+                            <li>New Mexico</li>
+                            <li>North Carolina</li>
+                            <li>Georgia</li>
+                            <li>Indiana</li>
+                            <li>Nevada</li>
                         </ul>
                     </div>
 
                     <div>
                         <h4 className="text-lg font-bold text-white mb-6">Contact Us</h4>
                         <ul className="space-y-4">
-                            <li className="flex items-start">
-                                <MapPin className="w-5 h-5 mr-3 text-brand-light flex-shrink-0" />
-                                <span>123 Real Estate Blvd, Suite 100<br />Dallas, TX 75201</span>
-                            </li>
                             <li className="flex items-center">
                                 <Phone className="w-5 h-5 mr-3 text-brand-light flex-shrink-0" />
                                 <a href="tel:+16232813654" className="hover:text-brand-light transition-colors">(623) 281-3654</a>
                             </li>
                             <li className="flex items-center">
                                 <Mail className="w-5 h-5 mr-3 text-brand-light flex-shrink-0" />
-                                <a href="mailto:info@truehomecapital.com" className="hover:text-brand-light transition-colors">info@truehomecapital.com</a>
+                                <a href="mailto:admin@truehomecapital.com" className="hover:text-brand-light transition-colors">admin@truehomecapital.com</a>
                             </li>
                         </ul>
                     </div>

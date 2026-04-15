@@ -12,8 +12,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Sell Your House Fast | True Home Capital",
-  description: "We buy houses in Dallas, TX. Get a fair cash offer for your home in any condition. No fees, no repairs, close in 7 days.",
-  keywords: ["sell house fast", "cash home buyers", "dallas real estate", "sell my house for cash", "we buy houses dallas", "True Home Capital"],
+  description: "We buy houses nationwide. Get a fair cash offer for your home in any condition. No fees, no repairs, close in 7 days.",
+  keywords: ["sell house fast", "cash home buyers", "nationwide real estate", "sell my house for cash", "we buy houses", "True Home Capital"],
   icons: {
     icon: '/logo_nobg.png',
   },
