@@ -42,11 +42,11 @@ export default function Navbar() {
                         {/* Desktop Menu */}
                         <div className="hidden md:flex items-center space-x-1 lg:space-x-2">
                             {[
-                                { href: '#how-it-works', label: 'How it Works' },
-                                { href: '#about', label: 'About Us' },
-                                { href: '#reviews', label: 'Reviews' },
-                                { href: '#faq', label: 'FAQ' },
-                                { href: '#buyers', label: 'For Investors' },
+                                { href: '/#how-it-works', label: 'How it Works' },
+                                { href: '/#about', label: 'About Us' },
+                                { href: '/#reviews', label: 'Reviews' },
+                                { href: '/#faq', label: 'FAQ' },
+                                { href: '/#buyers', label: 'For Investors' },
                             ].map(({ href, label }) => (
                                 <Link
                                     key={href}
@@ -65,7 +65,7 @@ export default function Navbar() {
                                 (623) 281-3654
                             </a>
                             <Link
-                                href="#contact"
+                                href="/#contact"
                                 className="ml-2 bg-accent text-white px-5 py-2.5 rounded-full font-semibold text-sm hover:bg-accent-dark transition-all duration-200 shadow-[0_4px_14px_rgba(212,176,89,0.4)] hover:shadow-[0_6px_20px_rgba(212,176,89,0.5)] hover:-translate-y-0.5 transform"
                             >
                                 Get Cash Offer
@@ -95,35 +95,35 @@ export default function Navbar() {
                         >
                             <div className="px-4 pt-2 pb-6 space-y-2">
                                 <Link
-                                    href="#how-it-works"
+                                    href="/#how-it-works"
                                     className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-md"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     How it Works
                                 </Link>
                                 <Link
-                                    href="#about"
+                                    href="/#about"
                                     className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-md"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     About Us
                                 </Link>
                                 <Link
-                                    href="#reviews"
+                                    href="/#reviews"
                                     className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-md"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     Reviews
                                 </Link>
                                 <Link
-                                    href="#faq"
+                                    href="/#faq"
                                     className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-md"
                                     onClick={() => setIsOpen(false)}
                                 >
                                     FAQ
                                 </Link>
                                 <Link
-                                    href="#buyers"
+                                    href="/#buyers"
                                     className="block px-3 py-3 text-base font-medium text-slate-600 hover:text-brand hover:bg-slate-50 rounded-md"
                                     onClick={() => setIsOpen(false)}
                                 >
@@ -137,7 +137,7 @@ export default function Navbar() {
                                 </a>
                                 <div className="pt-4">
                                     <Link
-                                        href="#contact"
+                                        href="/#contact"
                                         className="block w-full text-center bg-accent text-white px-6 py-4 rounded-lg font-bold hover:bg-accent-dark transition-colors shadow-lg"
                                         onClick={() => setIsOpen(false)}
                                     >
